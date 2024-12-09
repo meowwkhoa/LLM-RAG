@@ -1,0 +1,11 @@
+jupyterlab==4.2.1
+pymilvus[model]==2.4.3
+fastapi==0.111.0
+uvicorn==0.30.1
+sentence-transformers==3.0.1
+langchain==0.2.5
+langchain-community==0.2.5
+langchain-huggingface==0.0.3
+langserve==0.2.2
+openai==1.34.0
+sse-starlette==2.1.2

@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  tritonserver:
+    container_name: tritonserver
+    image: nvcr.io/nvidia/tritonserver:24.05-vllm-python-py3
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    ports:
+      - "8000:8000"
+      - "8001:8001"
+    shm_size: '1gb'
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      stack:
+        soft: 67108864
+        hard: 67108864
+    volumes:
+      - ${PWD}:/work
+    working_dir: /work
+    command: tritonserver --model-store ./model_repository

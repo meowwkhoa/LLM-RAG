@@ -1,0 +1,8 @@
+{
+    "model": "astronomer/Llama-3-8B-Instruct-GPTQ-8-Bit",
+    "disable_log_requests": "true",
+    "dtype": "float16",
+    "enforce_eager": "true",
+    "gpu_memory_utilization": 1,
+    "max_model_len": 4096
+}
